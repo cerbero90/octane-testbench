@@ -20,7 +20,7 @@ Set of utilities to test Laravel applications powered by Octane.
 Via Composer:
 
 ``` bash
-composer require cerbero/octane-testbench
+composer require --dev cerbero/octane-testbench
 ```
 
 In `tests/TestCase.php`, use the `TestsOctaneApplication` trait:
