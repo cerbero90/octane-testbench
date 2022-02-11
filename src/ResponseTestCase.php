@@ -17,8 +17,6 @@ use Throwable;
  */
 class ResponseTestCase extends TestResponse
 {
-    use Debugging;
-
     /**
      * The exception thrown in the response.
      *
