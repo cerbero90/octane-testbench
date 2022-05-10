@@ -11,8 +11,8 @@ jobs:
         strategy:
             fail-fast: true
             matrix:
-                php: [8.0]
-                laravel: [8.*]
+                php: [8.0, 8.1]
+                laravel: [8.*, 9.*]
                 dependency-version: [prefer-stable]
                 os: [ubuntu-latest]
 
@@ -59,8 +59,9 @@ jobs:
 
             - name: Install dependencies
               run: |
-                composer update --prefer-stable --prefer-dist --no-interaction
+                composer require "illuminate/contracts=8.*" --no-interaction --no-update
                 composer require --dev scrutinizer/ocular
+                composer update --prefer-stable --prefer-dist --no-interaction
 
             - name: Execute tests
               run: vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
