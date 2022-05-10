@@ -4,7 +4,6 @@ namespace Cerbero\OctaneTestbench;
 
 use Illuminate\Http\Response;
 use Illuminate\Testing\Assert;
-use Illuminate\Testing\Fluent\Concerns\Debugging;
 use Illuminate\Testing\TestResponse;
 use PHPUnit\Framework\TestCase;
 use ReflectionMethod;
@@ -17,8 +16,6 @@ use Throwable;
  */
 class ResponseTestCase extends TestResponse
 {
-    use Debugging;
-
     /**
      * The exception thrown in the response.
      *
@@ -86,19 +83,6 @@ class ResponseTestCase extends TestResponse
         Assert::assertSame($message, $this->exception->getMessage());
 
         return $this;
-    }
-
-    /**
-     * Retrieve the response to inspect.
-     *
-     * @param string|null  $key
-     * @return mixed
-     */
-    protected function prop(string $key = null)
-    {
-        $target = $this->exception ?: $this->baseResponse;
-
-        return data_get($target, $key);
     }
 
     /**
