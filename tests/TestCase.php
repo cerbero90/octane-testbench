@@ -2,7 +2,6 @@
 
 namespace Cerbero\OctaneTestbench;
 
-use Mockery;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
 /**
