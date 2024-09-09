@@ -18,10 +18,10 @@
         "role": "Developer"
     }],
     "require": {
-        "php": "^8.0",
-        "laravel/octane": "^1.0",
+        "php": "^8.3",
+        "laravel/octane": "^2.0",
         "mockery/mockery": "^1.0",
-        "phpunit/phpunit": ">=9.3"
+        "phpunit/phpunit": ">=11.0"
     },
     "require-dev": {
         "orchestra/testbench": ">=6.0",
