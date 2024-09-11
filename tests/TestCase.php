@@ -2,6 +2,7 @@
 
 namespace Cerbero\OctaneTestbench;
 
+use Laravel\Octane\OctaneServiceProvider;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
 /**
@@ -43,5 +44,18 @@ abstract class TestCase extends OrchestraTestCase
     protected function getOctaneBinPath(): string
     {
         return __DIR__ . '/bin';
+    }
+
+    /**
+     * Get package providers.
+     *
+     * @param \Illuminate\Foundation\Application $app
+     * @return array<int, class-string<\Illuminate\Support\ServiceProvider>>
+     */
+    protected function getPackageProviders($app)
+    {
+        return [
+            OctaneServiceProvider::class,
+        ];
     }
 }
